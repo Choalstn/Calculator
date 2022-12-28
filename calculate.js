@@ -1,5 +1,6 @@
-const display = document.querySelector("#panel");
+const display = document.querySelector("#display--number");
 const buttons = document.querySelector("#btns");
+const procedure = document.querySelector(".calproce")
 let firstNum, operatorForAdvanced, previousKey, previousNum;
 
 function calculate(n1, operator, n2) {
@@ -28,6 +29,7 @@ buttons.addEventListener("click", function (event) {
   const action = target.classList[0]; //target의 클래스 중 첫 번째
   const buttonContent = target.textContent;
 
+
   if (target.matches("button")) {
     if (action === "number") {
         if(display.textContent === "0" || previousKey === "oper" || previousKey === "calculate") {
@@ -36,11 +38,16 @@ buttons.addEventListener("click", function (event) {
             display.textContent += buttonContent;
         }
 
+        if(previousKey === "calculate") {
+            procedure.classList.add("display");
+        }
+
         previousKey = "number";
     }
     if (action === "oper") {
         firstNum = display.textContent;
         operatorForAdvanced = buttonContent;
+        console.log(firstNum, operatorForAdvanced);
 
         previousKey = "oper";
     }
@@ -52,10 +59,13 @@ buttons.addEventListener("click", function (event) {
         secondNum = undefined;
         operatorForAdvanced = undefined;
         display.textContent = "0";
+        procedure.classList.add("display");
         previousKey = "clear";
     }
     if (action === "calculate") {
         const secondNum = display.textContent;
+        procedure.textContent = firstNum + operatorForAdvanced + secondNum;
+        procedure.classList.remove("display");
         display.textContent = calculate(firstNum, operatorForAdvanced, secondNum);
         previousKey = "calculate";
     }

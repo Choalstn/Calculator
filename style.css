@@ -15,7 +15,7 @@ body {
 #container {
   border-radius: 35px;
   width: 330px;
-  height: 500px;
+  height: 515px;
   display: flex;
   flex-direction: column;
   box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
@@ -23,20 +23,27 @@ body {
 }
 
 #panel {
-  margin: 15px;
-  padding-right: 5px;
-  background-color: #ececec;
-  border-radius: 10px;
+  height: 120px;
   display: flex;
-  flex-grow: 0;
-  height: 80px;
   flex-direction: column;
   justify-content: flex-end;
-  border: 1px solid #ececec;
-  font-size: 30px;
   text-align: right;
+  padding-right: 18px;
   overflow: hidden;
-  overflow-wrap: break-word;
+  overflow-wrap:break-word; 
+}
+
+#display--number {
+  font-size: 30px;
+}
+
+.calproce {
+  font-size: 15px;
+  color: #7a7a7a;
+}
+
+.display {
+  display: none;
 }
 
 #btns {
@@ -82,8 +89,4 @@ button:hover {
   border-radius: 50px;
 }
 
-p {
-  font-size: 2rem;
-  text-align: right;
-  margin-top: 65px;
-}
+
