@@ -30,7 +30,7 @@ body {
   text-align: right;
   padding-right: 18px;
   overflow: hidden;
-  overflow-wrap:break-word; 
+  overflow-wrap: break-word;
 }
 
 #display--number {
@@ -88,5 +88,3 @@ button:hover {
   flex-basis: 0;
   border-radius: 50px;
 }
-
-
