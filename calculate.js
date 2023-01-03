@@ -55,6 +55,11 @@ buttons.addEventListener("click", function (event) {
       previousKey = "oper";
     }
     if (action === "decimal") {
+      if(!display.textContent.includes('.') && !(previousKey === 'operator')) {
+        display.textContent += '.';
+      } else if(previousKey === 'operator') {
+        display.textContent = '0.';
+      }
       previousKey = "decimal";
     }
     if (action === "clear") {
